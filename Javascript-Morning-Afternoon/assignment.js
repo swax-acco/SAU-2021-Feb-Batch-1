@@ -49,15 +49,16 @@ console.log("After pop, c = ",c);
 
 // 2 slide 52
 console.log("question 2");
-var add = (function() {
+var add = function() {
     var counter = 0;
-    return function() { return ++counter;}
-})();
+    var y = function() { return ++counter;}
+    return y;
+}();
 add();
 add();
 console.log(add());
 console.log("The value of counter is incrementing with every call and not resetting back to 1 as every function in js remembers all the variables in it's scope.");
-console.log("Everytime add is called it creates a new copy add with incremented counter value.\n");
+console.log("Everytime add is called, it resolves the value of counter variable using the reference to original counter variable which is returned along with y.")
 
 // 3 regex function
 function testRegEx(string){
