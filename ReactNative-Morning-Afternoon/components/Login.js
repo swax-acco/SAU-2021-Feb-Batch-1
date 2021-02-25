@@ -11,7 +11,7 @@ const Login = ({navigation}) => {
             if(name){
                 console.log(name);
                 setUserName(name);
-                // navigation.navigate("NoteList");
+                navigation.navigate("NoteList");
             }
         })
         
