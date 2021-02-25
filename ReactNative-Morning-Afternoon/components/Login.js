@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from "react";
-import {View, StyleSheet, Image, AsyncStorage } from "react-native";
+import {View, StyleSheet, Image, AsyncStorage, ToastAndroid, Platform, AlertIOS} from "react-native";
 import { Input, Button, Text } from '@ui-kitten/components';
 // import AsyncStorage from '@callstack/async-storage';
 
@@ -21,9 +21,18 @@ const Login = ({navigation}) => {
         AsyncStorage.setItem("userNameKey", userName);
     }, [userName]); 
 
+    const notifyMessage = (msg) => {
+        if (Platform.OS === 'android') {
+            ToastAndroid.show(msg, ToastAndroid.LONG);
+        } else {
+            AlertIOS.alert(msg);
+        }
+    }
+
     const logMe = () => {
         console.log(userName)
         if(!userName){
+            notifyMessage("Invalid User Name");
             return;
         }
         navigation.navigate("NoteList");

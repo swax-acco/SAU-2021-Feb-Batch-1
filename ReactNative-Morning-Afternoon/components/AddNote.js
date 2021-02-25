@@ -1,17 +1,30 @@
 import React, {useState, useRef} from "react";
-import {View, StyleSheet, TextInput} from "react-native";
+import {View, StyleSheet, Image, AsyncStorage, ToastAndroid, Platform, AlertIOS} from "react-native";
 import 'react-native-get-random-values';
 import { v4 as uuid, v4 } from 'uuid';
 import { Input, Button, Text } from '@ui-kitten/components';
 
 export default function AddNote({navigation}) {
     var title = "", note = "";
+
+    const notifyMessage = (msg) => {
+        if (Platform.OS === 'android') {
+            ToastAndroid.show(msg, ToastAndroid.LONG);
+        } else {
+            AlertIOS.alert(msg);
+        }
+    }
+
     const createNote = () => {
         console.log(title);
-        if(title === ' ' || title === '') return;
+        if(title === ' ' || title === '') {
+            notifyMessage("Title can't be empty");
+            return;
+        }
         let newNote = {id: v4(), title: title, note: note};
         navigation.navigate("NoteList",  {para: {note: newNote, operation:"add"}});
     }
+
     return(
         <View style={styles.container}>
             <Text style={{margin: 5}} category='h4'>Add Note</Text>
