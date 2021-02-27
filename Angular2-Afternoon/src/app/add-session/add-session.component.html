@@ -1,0 +1,24 @@
+<form [formGroup]="inputReactiveForm" class="session-form" (ngSubmit)="getValues()"> 
+    <h2 style="color: gray;">Add Session Details</h2>
+    <mat-form-field class="session-full-width" appearance="outline">
+        <mat-label>Session Name</mat-label>
+        <input matInput placeholder="Ex. Angular 2" formControlName='session-name'>
+    </mat-form-field>
+
+    <mat-form-field class="session-full-width" appearance="outline">
+        <mat-label>Instructor Name</mat-label>
+        <input matInput placeholder="Ex. Mr. Santhosh Kalisamy" formControlName='instructor'>
+    </mat-form-field>
+
+    <mat-form-field class="session-full-width" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Ex. Deep dive into Angular..." formControlName='description'></textarea>
+    </mat-form-field>
+
+    <section>
+        <div class="session-button-row">
+            <button mat-raised-button type="button" color="warn" routerLink="/sessionList" >Cancel</button>
+            <button mat-raised-button type="submit" color="primary" >Add Session</button>
+        </div>
+    </section>
+</form>

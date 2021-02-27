@@ -1,0 +1,15 @@
+<button id="add-button" mat-button type="button" routerLink="/addSession" color="basic">+  New Session</button>
+<div class="card-container" *ngFor="let session of sessionList">
+    <mat-card>
+        <h2>{{session['session-name']}}</h2>
+        <mat-divider></mat-divider><br>
+        <h3 >- {{session.instructor}}</h3>
+        <p>{{session.description}}</p>
+        <mat-divider></mat-divider><br>
+        <div class="button-row">
+            <button mat-raised-button type="button" (click)="updateSession(session.id)" color="primary">Edit</button>
+            <button mat-raised-button type="button" (click)="deleteSession(session.id)" color="warn">Delete</button>
+        </div>
+    </mat-card>
+</div>
+

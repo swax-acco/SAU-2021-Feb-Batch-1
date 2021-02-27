@@ -1,0 +1,19 @@
+.card-container {
+    margin-left: 30%;
+    width: 40%;
+}
+.mat-card {
+    width: 100%;
+    margin: 10px;
+}
+
+.mat-raised-button {
+    margin-left: 10px;
+}
+.button-row {
+    margin-left: 78%;
+}
+#add-button{
+    font-size: 18px;
+    margin-left: 30.5%;
+}
