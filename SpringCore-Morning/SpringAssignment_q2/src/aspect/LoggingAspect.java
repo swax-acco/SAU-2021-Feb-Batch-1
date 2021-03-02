@@ -1,6 +1,5 @@
 package aspect;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 
 @Aspect
