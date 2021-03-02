@@ -1,9 +1,7 @@
 package aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class LoggingAspect {
@@ -51,27 +49,33 @@ public class LoggingAspect {
 		System.out.println("Triangle getName Advice");
 	}
 
-	// After Annotation
+	// After
 	@After("allGetters()")
 	public void AfterGetter() {
 		System.out.println("Method Invoked AFTER all Getters");
 	}
 	
-	// Around Annotation
+	// Around
 	@Pointcut("execution (public * set*(..))")
 	private void allSet() {}
 	
 	@Around("allSet()")
 	public void aroundAdvice() {
-		System.out.println("Print before entering and after exiting the Setter");
+		System.out.println("Before entering and after exiting the Setter");
 	}
 	
 	
-	// After Throwing 
+	// AfterThrowing 
 	@AfterThrowing(pointcut = "execution( public * *(..))", throwing = "error")
 	public void afterThrowingAdvice() {
 		System.out.println("Exception thrown");
 	}
+
+	// After returning Annotation
+	@AfterReturning(pointcut="execution( public * *(..))", returning = "retVal")
+	public void afterReturning(Object retVal) {
+		System.out.println("Method Invoked after Returning");
+	} 
 	
 
 }
