@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://repository.ow2.org/nexus/
+HostUrl=https://repository.ow2.org/nexus/service/local/repositories/snapshots/content/org/ow2/asm/asm/9.2-SNAPSHOT/asm-9.2-20210206.131104-1.jar
