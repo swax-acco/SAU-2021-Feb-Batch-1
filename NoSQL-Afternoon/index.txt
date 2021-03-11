@@ -1,0 +1,5 @@
+indexing:
+
+For bookmyshow, we need to create index on cityname
+
+For FootballPlayer, we need to create index on numberOfGoals
