@@ -1,3 +1,3 @@
 # HTML Assignment
 
-[Page Live !](https://github.com/swax-acco/SAU-2021-Feb-Batch-1/tree/main/Html-CSS-Afternoon)
+[Page Live !](https://swax-acco.github.io/SAU-2021-Feb-Batch-1/Html-CSS-Afternoon)
